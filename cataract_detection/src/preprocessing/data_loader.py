@@ -33,14 +33,22 @@ val_test_transform = transforms.Compose([
 
 # Load datasets and create dataloaders
 def get_dataloaders():
+    print("Initializing data loaders...")  # Debug print
+
     train_dataset = datasets.ImageFolder(TRAIN_DIR, transform=train_transform)
+    print(f"Classes in training dataset: {train_dataset.classes}")  # Print classes
+
     val_dataset = datasets.ImageFolder(VAL_DIR, transform=val_test_transform)
+    print("Validation dataset loaded.")  # Debug print
+
     test_dataset = datasets.ImageFolder(TEST_DIR, transform=val_test_transform)
+    print("Test dataset loaded.")  # Debug print
 
     train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
     val_loader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False)
     test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False)
 
+    print("Data loaders created successfully!")  # Debug print
     return train_loader, val_loader, test_loader
 
 

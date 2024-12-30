@@ -2,12 +2,14 @@ import os
 import sys
 import torch
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from PIL import Image
 from torchvision import transforms
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from cataract_detection.src.model.model import CataractCNN
 
 app = Flask(__name__)
+CORS(app)
 
 # Load the model
 MODEL_PATH = os.path.join(os.path.dirname(__file__), "saved_models", "cataract_model.pth")

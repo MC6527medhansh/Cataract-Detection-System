@@ -32,27 +32,6 @@ A web-based application that uses AI to detect cataracts from eye images. This s
 
 ---
 
-## Directory Structure
-
-```plaintext
-.
-├── backend/                # Backend server code
-│   ├── app.py             # Flask app
-│   ├── requirements.txt   # Backend dependencies
-│   └── Dockerfile         # Backend Dockerfile
-├── cataract_detection/     # Model and training scripts
-│   ├── src/               # Model training and evaluation modules
-│   └── saved_models/      # Trained models
-├── frontend/               # Frontend application
-│   ├── components/        # React components
-│   ├── pages/             # Next.js pages
-│   ├── styles/            # Global CSS and Tailwind config
-│   └── package.json       # Frontend dependencies
-└── README.md               # Project documentation
-```
-
----
-
 ## Installation and Setup
 
 ### Prerequisites
@@ -160,8 +139,4 @@ Contributions are welcome! Please fork the repository and submit a pull request.
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 ---
-
-## Contact
-- **Email**: your-email@example.com
-- **GitHub**: [yourusername](https://github.com/yourusername)
 

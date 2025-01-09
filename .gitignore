@@ -156,8 +156,7 @@ cython_debug/
 
 # Ignore dataset files
 cataract_detection/dataset/augmented_resized_V2/
-cataract_detection/Ocular Disease Classification.v11i.folder/test
-cataract_detection/Ocular Disease Classification.v11i.folder/train
+cataract_detection/dataset/eyes.v1i.folder
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can

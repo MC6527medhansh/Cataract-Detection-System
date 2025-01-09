@@ -17,5 +17,5 @@ IMG_CHANNELS = 3
 BATCH_SIZE = 64
 
 LEARNING_RATE = 0.001
-EPOCHS = 1
+EPOCHS = 10
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"

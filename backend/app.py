@@ -1,4 +1,5 @@
 import os
+os.system('pip install flask-cors')
 import sys
 import torch
 from flask import Flask, request, jsonify

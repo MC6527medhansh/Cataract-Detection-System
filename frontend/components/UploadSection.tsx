@@ -37,10 +37,11 @@ export default function UploadSection({ setPrediction }: { setPrediction: (predi
 
     try {
       setIsUploading(true)
-      const response = await fetch('http://127.0.0.1:5001/predict', {
+      const response = await fetch('/api/predict', {
         method: 'POST',
         body: formData,
-      })
+      });
+    
 
       if (!response.ok) {
         throw new Error('Failed to fetch prediction from backend')
@@ -49,7 +50,6 @@ export default function UploadSection({ setPrediction }: { setPrediction: (predi
       const result = await response.json()
       setPrediction(result.prediction.toString())
 
-      // Smooth scroll to the Results Section
       const resultsSection = document.getElementById('results-section')
       if (resultsSection) {
         resultsSection.scrollIntoView({ behavior: 'smooth' })

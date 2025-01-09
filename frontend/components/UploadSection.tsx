@@ -37,11 +37,10 @@ export default function UploadSection({ setPrediction }: { setPrediction: (predi
 
     try {
       setIsUploading(true)
-      const response = await fetch('/api/predict', {
+      const response = await fetch('http://127.0.0.1:5001/predict', {
         method: 'POST',
         body: formData,
-      });
-    
+      })
 
       if (!response.ok) {
         throw new Error('Failed to fetch prediction from backend')

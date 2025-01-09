@@ -4,15 +4,21 @@ services:
     env: python
     rootDir: backend
     buildCommand: pip install -r requirements.txt
-    startCommand: python app.py
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
     plan: free
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.11
+      - key: CORS_ORIGIN
+        value: https://frontend-service.onrender.com
 
   - type: web
     name: frontend-service
-    env: static
+    env: node
     rootDir: frontend
     buildCommand: npm install && npm run build
-    staticPublishPath: ./out
+    startCommand: npm start
+    plan: free
     envVars:
-      - key: REACT_APP_API_BASE_URL
+      - key: NEXT_PUBLIC_API_URL
         value: https://backend-service.onrender.com

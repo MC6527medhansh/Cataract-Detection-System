@@ -9,7 +9,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from cataract_detection.src.model.model import CataractCNN
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=[os.environ.get('CORS_ORIGIN')])
 
 MODEL_PATH = os.path.join(os.path.dirname(__file__), "saved_models", "cataract_model.pth")
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
@@ -55,4 +55,5 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5001)
+    port = int(os.environ.get("PORT", 5001))
+    app.run(host="0.0.0.0", port=port)
